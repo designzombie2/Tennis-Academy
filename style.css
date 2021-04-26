@@ -1,0 +1,232 @@
+/* Global */
+
+:root {
+    /* Color */
+    --color-white: #ffffff;
+    --color-light-white: #eeeeee;
+    --color-dark-white: #bdbdbd;        
+    --color-grey: #616161;
+    --color-dark-grey: #7A776D;    
+    --color-light-grey: #7c7979;
+    --color-dark-green: #98C10E;
+    --color-light-green: #F2F5EA;    
+    --color-black: #272727;
+  
+    /* Font size */
+    --font-large: 60px;
+    --font-medium: 28px;
+    --font-regular: 19px;
+    --font-small: 15px;
+    --font-micro: 14px;
+  
+    /* Font weight */
+    --weight-bold: 700;
+    --weight-semi-bold: 600;
+    --weight-regular: 400;
+    --weight-none: 100;
+  
+    /* size */
+    --size-border-radius:4px;
+  
+    /* Annimation */
+    --annimation-duration:300ms;
+  
+  }
+
+/* Universal tags */
+*{
+    box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	font-family: "Poppins", sans-serif;
+	-webkit-font-smoothing: antialiased;
+    background-color: var(--color-light-green); 
+    padding: 0;
+    margin: 0;   
+}
+
+a{
+    text-decoration: none;
+    
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+
+/* Typography */
+
+h1 {
+    font-size: var(--font-large);
+    font-weight: var(--weight-bold);
+    font-family: "Barlow Condensed", sans-serif;
+    color: var(--color-black);
+    margin: 10px 0px;
+    line-height: 1;
+}
+
+h2 {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-semi-bold);
+    color: var(--color-black);
+    margin: 8px 0;
+}
+
+p {
+    font-size: var(--font-small);
+    font-weight: var(--weight-regular);
+    color: var(--color-dark-grey);
+    margin: 4px 0;
+}
+
+.subheading{
+    font-size: var(--font-regular);
+    font-weight: var(--weight-semi-bold);
+    color: var(--color-dark-green);
+}
+
+button{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+image{
+    object-fit: cover;
+}
+
+/* Button style */
+.btn-primary{
+    width: 158px;
+    height: 50px;
+    margin: 30px;
+}
+.btn-line-primary,
+.btn-outline-primary:hover{
+    background-color: var(--color-dark-green);
+    color: var(--color-white);
+}
+.btn-outline-primary{
+    border: 3px solid var(--color-dark-green);
+    color: var(--color-dark-green);    
+}
+
+
+
+
+/* Navbar */
+.navbar{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 40px 50px;
+}
+
+.navbar.navbar--dark {
+    background-color: var(--color-dark-green);
+}
+
+.navbar__logo img{
+    width: 125px;
+}
+
+.navbar__menu{
+    display: flex;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.navbar__menu__item{
+    margin: 0 4px;
+    padding: 8px 16px;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: var(--font-small);
+    font-weight: var(--weight-regular);
+}
+.navbar__menu__item.active, 
+.navbar__menu__item:hover{
+    color: var(--color-dark-green);
+}
+
+
+
+
+/* Header */
+.header{
+    height: 100%;
+    background: url('stage-adultes3.jpg') center/cover no-repeat;  
+    background-attachment: fixed;  
+    text-align: center;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .header__overlays{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .6;
+    background:var(--color-black);
+} */
+
+.header__title{
+    font-size: 7vw;
+    color: var(--color-white);
+    text-transform: uppercase;
+}
+
+/* Section common */
+.section {    
+    text-align: center;    
+    margin: auto;    
+}
+.section__container{
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 150px;
+}
+
+
+/* Training */
+.training{
+    width: 100%;
+    display: flex;    
+    justify-content: space-between;
+}
+
+.training__items:nth-child(1),
+.training__items:nth-child(3) {
+     flex-grow: 2; 
+}
+
+.training__items.text-about{
+    padding: 120px 40px 50px;
+}
+
+.text-about{
+    width: 32%;
+}
+.text-about h2{
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-dark-green);
+    margin-bottom: 20px;
+}
+
+/* Programmes */
+.programmes__lesson{
+    display: flex;
+    justify-content: space-between;
+}
