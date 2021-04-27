@@ -16,8 +16,8 @@
     --font-large: 60px;
     --font-medium: 28px;
     --font-regular: 19px;
-    --font-small: 15px;
-    --font-micro: 14px;
+    --font-small: 14px;
+    --font-micro: 12px;
   
     /* Font weight */
     --weight-bold: 700;
@@ -31,7 +31,13 @@
     /* Annimation */
     --annimation-duration:300ms;
   
-  }
+}
+
+*,
+*::before,
+*::after {
+-webkit-box-sizing: border-box;
+box-sizing: border-box; }
 
 /* Universal tags */
 *{
@@ -73,14 +79,7 @@ h2 {
     font-size: var(--font-regular);
     font-weight: var(--weight-semi-bold);
     color: var(--color-black);
-    margin: 8px 0;
-}
-
-p {
-    font-size: var(--font-small);
-    font-weight: var(--weight-regular);
-    color: var(--color-dark-grey);
-    margin: 4px 0;
+    margin: 20px 0;
 }
 
 .subheading{
@@ -89,15 +88,18 @@ p {
     color: var(--color-dark-green);
 }
 
+.section__description {
+    font-size: var(--font-small);
+    font-weight: var(--weight-regular);
+    color: var(--color-dark-grey);
+    margin: 25px 0;
+}
+
 button{
     background-color: transparent;
     cursor: pointer;
     border: none;
     outline: none;
-}
-
-image{
-    object-fit: cover;
 }
 
 /* Button style */
@@ -128,6 +130,7 @@ image{
     align-items: center;
     background-color: transparent;
     padding: 40px 50px;
+    z-index: 999;
 }
 
 .navbar.navbar--dark {
@@ -162,25 +165,34 @@ image{
 
 /* Header */
 .header{
-    height: 100%;
-    background: url('stage-adultes3.jpg') center/cover no-repeat;  
-    background-attachment: fixed;  
-    text-align: center;  
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
+}
+.header__container{
+    position: relative;   
+    transition: all 0s ease 0s;
+    background: var(--color-black);
 }
 
-/* .header__overlays{
+.header__container, video.loaded{
+    height: 100%;
+}
+video.loaded, .header__text{
+    width: 100%; 
+}
+
+video.loaded{
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
-    opacity: .6;
-    background:var(--color-black);
-} */
+    left: 0;    
+    object-fit: cover;
+    opacity: .8;
+}
+
+.header__text{
+    position: absolute;
+    top: 27%;
+    color: #f1f1f1;
+    padding: 20px;
+}
 
 .header__title{
     font-size: 7vw;
@@ -188,15 +200,18 @@ image{
     text-transform: uppercase;
 }
 
+
+
+
 /* Section common */
 .section {    
     text-align: center;    
-    margin: auto;    
+    margin: auto; 
 }
 .section__container{
-    max-width: 1200px;
+    max-width: 1280px;
     margin: auto;
-    padding-top: 150px;
+    padding: 165px 0 120px 0;
 }
 
 
@@ -221,12 +236,43 @@ image{
 }
 .text-about h2{
     text-transform: uppercase;
-    border-bottom: 1px solid var(--color-dark-green);
-    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-dark-green);    
 }
 
 /* Programmes */
 .programmes__lesson{
     display: flex;
     justify-content: space-between;
+    margin: 70px;
 }
+.lesson{
+    width: 300px;
+}
+
+.lesson__description{
+    font-size: var(--font-small);
+}
+
+.lesson__icon img{
+    max-width: 50%;
+}
+
+/* Facilities */
+.facilities{
+    position: relative;   
+    background-color: var(--color-black);
+}
+.facilities__slider{
+    height: 900px;     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.items__text{
+    z-index: 99;      
+}
+.f-title,
+.description-white{
+    color: var(--color-white);
+}
+
